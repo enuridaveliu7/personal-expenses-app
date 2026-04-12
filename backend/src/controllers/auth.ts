@@ -8,7 +8,6 @@ const registerSchema = z.object({
   email: z.string().email('Invalid email address'),
   password: z.string().min(6, 'Password must be at least 6 characters'),
   name: z.string().min(1, 'Name is required'),
-  role: z.nativeEnum(Role).optional(),
 });
 
 const loginSchema = z.object({
@@ -28,14 +27,11 @@ export const register = async (req: Request, res: Response, next: NextFunction) 
       throw error;
     }
 
-    // Only allow ADMIN role if explicitly set and user is admin (for security)
-    const role = validatedData.role || Role.USER;
-
     const user = await createUser(
       validatedData.email,
       validatedData.password,
       validatedData.name,
-      role
+      Role.USER
     );
 
     const token = generateToken(user.id, user.email, user.role);

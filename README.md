@@ -2,6 +2,12 @@
 
 A full-stack personal expenses tracking application built with React (TypeScript, TailwindCSS, Shadcn UI) for the frontend and Express.js (TypeScript) with PostgreSQL for the backend.
 
+## Live Demo
+
+- Frontend: add your Vercel frontend URL here
+- Backend API: add your backend URL here
+- Health check: `/api/health`
+
 ## Features
 
 - **Authentication/Authorization**: JWT-based authentication with role-based access control (Admin, User)
@@ -61,14 +67,15 @@ A full-stack personal expenses tracking application built with React (TypeScript
 
 3. Create a `.env` file in the `backend` directory:
    ```env
-   DATABASE_URL="postgresql://user:password@localhost:5432/expenses_db?schema=public"
+   DATABASE_URL="postgresql://USER:PASSWORD@localhost:5432/expenses_db?schema=public"
    JWT_SECRET=your-super-secret-jwt-key-change-this-in-production
    JWT_EXPIRES_IN=7d
-   PORT=5000
+   PORT=5050
    NODE_ENV=development
+   CORS_ORIGIN=http://localhost:3000
    ```
 
-   Replace `user` and `password` with your PostgreSQL credentials.
+   You can also copy the values from `backend/.env.example`.
 
 4. Generate Prisma client:
    ```bash
@@ -99,7 +106,14 @@ A full-stack personal expenses tracking application built with React (TypeScript
    npm install
    ```
 
-3. Start the development server:
+3. Create a `.env` file in the `frontend` directory:
+   ```env
+   VITE_API_URL=http://localhost:5050/api
+   ```
+
+   You can also copy the values from `frontend/.env.example`.
+
+4. Start the development server:
    ```bash
    npm run dev
    ```
@@ -195,7 +209,38 @@ expenses-app/
 - `npm run build` - Build for production
 - `npm run preview` - Preview production build
 
+## Deploy
+
+### Frontend on Vercel
+
+1. Import the `frontend` folder as a Vercel project
+2. Set the build command to `npm run build`
+3. Set the output directory to `dist`
+4. Add the environment variable `VITE_API_URL`
+5. Keep `frontend/vercel.json` so React routes work after refresh
+
+### Backend on Vercel
+
+1. Import the `backend` folder as a separate Vercel project
+2. Add these environment variables:
+   - `DATABASE_URL`
+   - `JWT_SECRET`
+   - `JWT_EXPIRES_IN`
+   - `CORS_ORIGIN`
+   - `NODE_ENV=production`
+3. The backend now exposes a serverless entry at `backend/api/index.ts`
+4. Test the deployed API with `/api/health`
+
+## Screenshots
+
+Add screenshots in a folder like `docs/screenshots/` and link them here:
+
+```md
+![Home](docs/screenshots/home.png)
+![Dashboard](docs/screenshots/dashboard.png)
+![Transactions](docs/screenshots/transactions.png)
+```
+
 ## License
 
 ISC
-# expenses-app-09-25

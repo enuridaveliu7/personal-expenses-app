@@ -15,10 +15,18 @@ export const comparePassword = async (
 };
 
 export const generateToken = (userId: string, email: string, role: Role): string => {
+  const secret = process.env.JWT_SECRET;
+
+  if (!secret) {
+    throw new Error('JWT_SECRET is not configured');
+  }
+
   return jwt.sign(
     { userId, email, role },
-    process.env.JWT_SECRET!,
-    { expiresIn: process.env.JWT_EXPIRES_IN || '7d' }
+    secret,
+    {
+      expiresIn: (process.env.JWT_EXPIRES_IN || '7d') as jwt.SignOptions['expiresIn'],
+    }
   );
 };
 
