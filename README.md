@@ -233,13 +233,29 @@ expenses-app/
 
 ## Screenshots
 
-Add screenshots in a folder like `docs/screenshots/` and link them here:
+### Home
 
-```md
 ![Home](docs/screenshots/home.png)
+
+### Login
+
+![Login](docs/screenshots/login.png)
+
+### Register
+
+![Register](docs/screenshots/register.png)
+
+### Dashboard
+
 ![Dashboard](docs/screenshots/dashboard.png)
+
+### Categories
+
+![Categories](docs/screenshots/categories.png)
+
+### Transactions
+
 ![Transactions](docs/screenshots/transactions.png)
-```
 
 ## License
 
