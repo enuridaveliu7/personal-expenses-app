@@ -4,9 +4,33 @@ A full-stack personal expenses tracking application built with React (TypeScript
 
 ## Live Demo
 
-- Frontend: [personal-expenses-app-phi.vercel.app](https://personal-expenses-app-phi.vercel.app)
-- Backend API: [personal-expenses-app-2.onrender.com](https://personal-expenses-app-2.onrender.com)
-- Health check: [personal-expenses-app-2.onrender.com/api/health](https://personal-expenses-app-2.onrender.com/api/health)
+[View Live Demo](https://personal-expenses-app-phi.vercel.app)
+
+## Screenshots
+
+### Home
+
+![Home](docs/screenshots/home.png)
+
+### Dashboard
+
+![Dashboard](docs/screenshots/dashboard.png)
+
+### Transactions
+
+![Transactions](docs/screenshots/transactions.png)
+
+### Categories
+
+![Categories](docs/screenshots/categories.png)
+
+### Login
+
+![Login](docs/screenshots/login.png)
+
+### Register
+
+![Register](docs/screenshots/register.png)
 
 ## Features
 
@@ -230,32 +254,6 @@ expenses-app/
    - `NODE_ENV=production`
 3. The backend now exposes a serverless entry at `backend/api/index.ts`
 4. Test the deployed API with `/api/health`
-
-## Screenshots
-
-### Home
-
-![Home](docs/screenshots/home.png)
-
-### Login
-
-![Login](docs/screenshots/login.png)
-
-### Register
-
-![Register](docs/screenshots/register.png)
-
-### Dashboard
-
-![Dashboard](docs/screenshots/dashboard.png)
-
-### Categories
-
-![Categories](docs/screenshots/categories.png)
-
-### Transactions
-
-![Transactions](docs/screenshots/transactions.png)
 
 ## License
 
