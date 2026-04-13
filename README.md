@@ -4,9 +4,9 @@ A full-stack personal expenses tracking application built with React (TypeScript
 
 ## Live Demo
 
-- Frontend: add your Vercel frontend URL here
-- Backend API: add your backend URL here
-- Health check: `/api/health`
+- Frontend: [personal-expenses-app-phi.vercel.app](https://personal-expenses-app-phi.vercel.app)
+- Backend API: [personal-expenses-app-2.onrender.com](https://personal-expenses-app-2.onrender.com)
+- Health check: [personal-expenses-app-2.onrender.com/api/health](https://personal-expenses-app-2.onrender.com/api/health)
 
 ## Features
 
